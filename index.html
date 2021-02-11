@@ -52,49 +52,54 @@
 			});
 			$("#contact").click(function () {
 				$(".detailed").hide();
+				$.ajax({async: false, url: "./ajax/contact.html", success: function(result){
+			    	if (result.trim() != "") {
+			    		$("#faqs_div").html(result);
+			    	}
+			    }});
 				$("#contact_div").show();
 			});
 		});
 	</script>
-	<center>
-		<table>
-			<tr>
-				<th id="about">About</th>
-				<th id="research">Research</th>
-				<th id="professional">Professional</th>
-				<th id="personal">Personal</th>
-				<th id="talks">Talks</th>
-				<th id="faqs">FAQs</th>
-				<th id="contact">Contact</th>
-			</tr>
-		</table>
-	</center>
-	<center>
-		<div id="about_div" class="detailed" hidden="true" align="justify">
+	<div id="text_body" style="width:800px; margin:0 auto;">
+		<center>
 			<table>
 				<tr>
-					<td width="5%"></td>
-					<td>
-						<h4>Hi,</h4>
-						I am Purnendu Prabhat, a computer scientist. I work as an Assistant Professor in the Department of Computer Science and Engineering at Model Institute of Engineering and Technology, Jammu.<br>
-						Mostly I research, think, code, read and write. I also give some of my time for sharing knowledge through lectures, talks (workshops, seminars, etc.) and YouTube videos. Whatever time is then left goes to the luxury of laziness and regular chores.<br>
-						Being a minimalist, I have designed systems that keep the mundanes to extreme minimum so that I can focus on doing the noble. This website can serve an example for you.<br>
-						I moved to Jammu in 2015, when it was a special state with lot of restrictions for non-locals.
-					</td>
-					<td width="5%"></td>
+					<th id="about">About</th>
+					<th id="research">Research</th>
+					<th id="professional">Professional</th>
+					<th id="personal">Personal</th>
+					<th id="talks">Talks</th>
+					<th id="faqs">FAQs</th>
+					<th id="contact">Contact</th>
 				</tr>
 			</table>
-			
-		</div>
-		<div id="research_div" class="detailed" hidden="true">research</div>
-		<div id="professional_div" class="detailed" hidden="true">professional</div>
-		<div id="personal_div" class="detailed" hidden="true">personal</div>
-		<div id="talks_div" class="detailed" hidden="true"></div>
-		<div id="faqs_div" class="detailed" hidden="true" align="justify">
-			
-			
-		</div>
-		<div id="contact_div" class="detailed" hidden="true">contact</div>
-	</center>
+		</center>
+		<center>
+			<div id="about_div" class="detailed" hidden="true" align="justify">
+				<table>
+					<tr>
+						<td width="5%"></td>
+						<td>
+							<h4>Hi,</h4>
+							I am Purnendu Prabhat, a computer scientist. I work as an Assistant Professor in the Department of Computer Science and Engineering at Model Institute of Engineering and Technology, Jammu.<br>
+							Mostly I research, think, code, read and write. I also give some of my time for sharing knowledge through lectures, talks (workshops, seminars, etc.) and YouTube videos. Whatever time is then left goes to the luxury of laziness and regular chores.<br>
+							Being a minimalist, I have designed systems that keep the mundanes to extreme minimum so that I can focus on doing the noble. This website can serve an example for you.<br>
+							I moved to Jammu in 2015, when it was a special state with lot of restrictions for non-locals.
+						</td>
+						<td width="5%"></td>
+					</tr>
+				</table>
+				
+			</div>
+			<div id="research_div" class="detailed" hidden="true">research</div>
+			<div id="professional_div" class="detailed" hidden="true">professional</div>
+			<div id="personal_div" class="detailed" hidden="true">personal</div>
+			<div id="talks_div" class="detailed" hidden="true"></div>
+			<div id="faqs_div" class="detailed" hidden="true" align="justify">
+			</div>
+			<div id="contact_div" class="detailed" hidden="true">contact</div>
+		</center>
+	</div>
 </body>
 </html>
