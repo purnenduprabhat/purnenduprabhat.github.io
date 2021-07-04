@@ -28,6 +28,15 @@
 				$(".detailed").hide();
 				$("#professional_div").show();
 			});
+			$("#posts").click(function () {
+				$(".detailed").hide();
+				$.ajax({async: false, url: "./ajax/post1.html", success: function(result){
+			    	if (result.trim() != "") {
+			    		$("#posts_div").html(result);
+			    	}
+			    }});
+				$("#posts_div").show();
+			});
 			$("#personal").click(function () {
 				$(".detailed").hide();
 				$("#personal_div").show();
@@ -67,6 +76,7 @@
 				<th id="about">About</th>
 				<th id="research">Research</th>
 				<th id="professional">Professional</th>
+				<th id="posts">Posts</th>
 				<th id="personal">Personal</th>
 				<th id="talks">Talks</th>
 				<th id="faqs">FAQs</th>
@@ -98,6 +108,7 @@
 						</div>
 						<div id="research_div" class="detailed" hidden="true">research</div>
 						<div id="professional_div" class="detailed" hidden="true">professional</div>
+						<div id="posts_div" class="detailed" hidden="true">posts</div>
 						<div id="personal_div" class="detailed" hidden="true">personal</div>
 						<div id="talks_div" class="detailed" hidden="true"></div>
 						<div id="faqs_div" class="detailed" hidden="true" align="justify">
